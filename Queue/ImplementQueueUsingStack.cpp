@@ -13,7 +13,27 @@ class MyQueue {
         int pop() {
             if(st2.empty())
             {
-                while(!st1.empty())
+                while(!st1.empty())class Solution {
+public:
+    int firstUniqChar(string s) {
+        unordered_map<char,int> freq;
+
+        for(char  c : s)
+        {
+            freq[c]++;
+        }
+
+        for(int i=0; i<s.size(); i++)
+        {
+            if(freq[s[i]]==1)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+};
                 {
                     st2.push(st1.top());
                     st1.pop();
